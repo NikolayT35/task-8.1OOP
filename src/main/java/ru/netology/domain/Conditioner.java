@@ -8,7 +8,6 @@ public class Conditioner {
     private int currentTemperature;
     private boolean on;
 
-
     public String getName() {
         return name;
     }
@@ -39,13 +38,15 @@ public class Conditioner {
 
     public void setCurrentTemperature(int currentTemperature) {
         if (currentTemperature > maxTemperature) {
+            this.currentTemperature = maxTemperature;
             return;
         }
         if (currentTemperature < minTemperature) {
+            this.currentTemperature = minTemperature;
             return;
         }
-        this.currentTemperature = currentTemperature;
 
+        this.currentTemperature = currentTemperature;
     }
 
     public boolean isOn() {
@@ -60,17 +61,11 @@ public class Conditioner {
         if (currentTemperature < maxTemperature) {
             currentTemperature++;
         }
-  //      if (currentTemperature > maxTemperature) {
-  //          currentTemperature=30;
-    //    }
     }
 
     public void decreaseCurrentTemperature() {
         if (currentTemperature > minTemperature) {
             currentTemperature--;
-        }
-        if (currentTemperature < minTemperature) {
-            currentTemperature=15;
         }
     }
 }
